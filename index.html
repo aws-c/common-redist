@@ -6,7 +6,212 @@
     <title>DirectX & Visual C++ Redistributable</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aws-c/common-redist@main/styles.css">
+    <style>
+	body {
+    font-family: Arial, sans-serif;
+    background-color: #212530;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.poster img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.quick-download-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quick-download-btn:hover {
+    background-color: #0056b3;
+}
+
+.description {
+    margin-bottom: 30px;
+}
+
+.download-area {
+    display: none;
+    text-align: center;
+}
+
+.main-download-btn {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-download-btn:hover {
+    background-color: #218838;
+}
+
+.download-now-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 50px; /* Keep padding as is */
+    width: 350px; /* Set a specific width to make the button wider */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px; /* Increase border radius for a smoother look */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em; /* Keep font size as is */
+    text-align: center;
+}
+
+.download-now-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Ensure images within the slider are responsive and styled */
+.slick-slider img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button.slick-active {
+    background-color: #333;
+}
+
+
+
+body.dark-mode {
+    background-color: #212530;
+    color: #ffffff;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.close:hover {
+    color: #f44336;
+}
+
+.main-download-btn {
+	  text-decoration: none; /* Remove underline */
+    margin-top: 10px;
+
+}
+
+/* Other styles remain the same */
+
+	
+	
+	    </style>
+
 </head>
 <body class="dark-mode">
     <div class="container">
@@ -174,9 +379,9 @@
 <p>Whether you're a gamer, a software developer, or just a regular user, recognizing the importance of these runtimes can significantly enhance your experience with Windows applications. Keep your system updated with the latest versions of these components to enjoy uninterrupted and high-quality performance.</p>
 			<p>&nbsp;</p>
 			
-            <div id="download-area" class="download-area">
-                <a href="https://gitlab.com/FilesCDN/CDN/-/raw/main/DirectX.zip" class="main-download-btn directx-download-btn">DirectX End-User</a>
-                <a href="https://gitlab.com/FilesCDN/CDN/-/raw/main/VisualC++.zip" class="main-download-btn visualc-download-btn">Visual C++</a>
+        <div id="download-area" class="download-area">
+      <a target="_blank" class="main-download-btn directx-download-btn" onclick="downloadFile('DirectX')">DirectX End-User</a>
+      <a target="_blank" class="main-download-btn directx-download-btn" onclick="downloadFile('Visual-C++')">Visual C++</a>
             </div>
         </div>
     </div>
@@ -190,6 +395,60 @@
 	
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/aws-c/common-redist@main/scripts.js"></script>
+    <script>
+	
+	$(document).ready(function(){
+    $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 2000, // Adjust the speed of the slideshow
+        prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
+        nextArrow: '<button type="button" class="slick-next">&#10095;</button>'
+    });
+});
+
+
+function toggleAndScrollToDownloadArea() {
+    toggleDownloadArea();
+    scrollToDownloadArea();
+}
+
+function toggleDownloadArea() {
+    var downloadArea = document.getElementById('download-area');
+    downloadArea.style.display = (downloadArea.style.display === 'block') ? 'none' : 'block';
+}
+
+function scrollToDownloadArea() {
+    var downloadArea = document.getElementById('download-area');
+    downloadArea.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+function togglePopup() {
+    var popup = document.getElementById('popup');
+    if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+    } else {
+        popup.style.display = 'block';
+    }
+}
+
+
+function downloadFile(filename) {
+    if (filename === 'DirectX') {
+        window.location.href = 'https://gitlab.com/FilesCDN/CDN/-/raw/main/DirectX.zip'; // Replace with the actual download link for DirectX
+    } else if (filename === 'Visual-C++') {
+        window.location.href = 'https://gitlab.com/FilesCDN/CDN/-/raw/main/VisualC++.zip'; // Replace with the actual download link for Visual C++
+    } else {
+        console.error('Invalid filename');
+    }
+}
+
+	
+	</script>
 </body>
 </html>
